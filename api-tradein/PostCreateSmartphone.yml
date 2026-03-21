@@ -1,0 +1,23 @@
+info:
+  name: PostCreateSmartphone
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: http://localhost:8080/tradein/smartphones
+  body:
+    type: json
+    data: |-
+      {
+        "tradeInValue": 2540.50,
+        "model": "PocoX7 Pro",
+        "email": "lucas.schuck@gmail.com"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
