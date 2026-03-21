@@ -1,6 +1,7 @@
 package com.github.lucasbschuck.controller;
 
 import com.github.lucasbschuck.application.CreateSmartphone;
+import com.github.lucasbschuck.application.GetSmartphoneByEmail;
 import com.github.lucasbschuck.model.Smartphone;
 import lombok.AllArgsConstructor;
 import org.apache.logging.log4j.message.FlowMessage;
@@ -15,7 +16,12 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 public class TradeInSmartphoneController {
     private final CreateSmartphone createSmartphone;
+    private final GetSmartphoneByEmail getSmartphoneByEmail;
 
+    @GetMapping
+    public Smartphone get(@RequestBody String email){
+        return getSmartphoneByEmail.execute(email);
+    }
 
     @PostMapping
     public ResponseEntity<?> create(@RequestBody Smartphone smartphone) {

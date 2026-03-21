@@ -11,9 +11,8 @@ public class CreateSmartphone {
 
     private SmartphoneRepository smartphoneRepository;
 
-    public void execute(Smartphone smartphone) throws IllegalArgumentException{
-
-        if(smartphone.getModel() == null || smartphone.getEmail() == null || smartphone.getTradeInValue() == null){
+    public void execute(Smartphone smartphone) throws IllegalArgumentException {
+        if (smartphone.getModel() == null || smartphone.getEmail() == null || smartphone.getTradeInValue() == null) {
             throw new IllegalArgumentException("Field Can Not Be Null");
         }
         smartphoneRepository.save(smartphone);
