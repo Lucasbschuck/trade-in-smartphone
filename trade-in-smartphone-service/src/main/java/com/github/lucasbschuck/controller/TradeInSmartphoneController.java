@@ -4,12 +4,11 @@ import com.github.lucasbschuck.application.CreateSmartphone;
 import com.github.lucasbschuck.application.GetSmartphoneByEmail;
 import com.github.lucasbschuck.model.Smartphone;
 import lombok.AllArgsConstructor;
-import org.apache.logging.log4j.message.FlowMessage;
-import org.apache.logging.log4j.message.Message;
-import org.apache.logging.log4j.message.SimpleMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequestMapping("/tradein/smartphones")
 @RestController
@@ -19,10 +18,9 @@ public class TradeInSmartphoneController {
     private final GetSmartphoneByEmail getSmartphoneByEmail;
 
     @GetMapping
-    public Smartphone get(@RequestBody String email){
+    public List<Smartphone> get(@RequestParam String email){
         return getSmartphoneByEmail.execute(email);
     }
-
     @PostMapping
     public ResponseEntity<?> create(@RequestBody Smartphone smartphone) {
         try {
