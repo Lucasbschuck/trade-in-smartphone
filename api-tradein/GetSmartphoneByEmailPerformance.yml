@@ -1,0 +1,28 @@
+info:
+  name: GetSmartphoneByEmailPerformance
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: http://localhost:8080/tradeinperformance/smartphones?email=lucas.schuck@gmail.com&page=0&size=10
+  params:
+    - name: email
+      value: lucas.schuck@gmail.com
+      type: query
+    - name: page
+      value: "0"
+      type: query
+    - name: size
+      value: "10"
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
