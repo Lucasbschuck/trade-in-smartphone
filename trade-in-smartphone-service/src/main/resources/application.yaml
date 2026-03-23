@@ -2,7 +2,7 @@ spring:
   application:
     name: trade-in-smartphone-service
   datasource:
-    url: jdbc:h2:file:./data/trade-in-smartphone
+    url: jdbc:h2:file:C:\Users\lucas\IdeaProjects\trade-in-smartphone;AUTO_SERVER=TRUE
     username: sa
     password:
     driverClassName: org.h2.Driver

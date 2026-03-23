@@ -2,7 +2,6 @@ package com.github.lucasbschuck;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
 public class TradeInSmartphoneServiceApplication {
@@ -10,5 +9,4 @@ public class TradeInSmartphoneServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(TradeInSmartphoneServiceApplication.class, args);
     }
-
 }

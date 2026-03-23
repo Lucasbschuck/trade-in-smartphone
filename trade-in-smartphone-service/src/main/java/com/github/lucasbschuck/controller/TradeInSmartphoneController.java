@@ -18,7 +18,7 @@ public class TradeInSmartphoneController {
     private final GetSmartphoneByEmail getSmartphoneByEmail;
 
     @GetMapping
-    public List<Smartphone> get(@RequestParam String email){
+    public List<Smartphone> getByEmail(@RequestParam String email){
         return getSmartphoneByEmail.execute(email);
     }
     @PostMapping
@@ -31,4 +31,5 @@ public class TradeInSmartphoneController {
             return ResponseEntity.status(400).body(e.getMessage());
         }
     }
+
 }
